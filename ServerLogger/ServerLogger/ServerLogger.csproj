@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99B6D4D5-E89C-4101-B595-066D429EA515}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServerLogger</RootNamespace>
+    <AssemblyName>ServerLogger</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <ApplicationIcon>data.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>64765EAD55BCFD185900714B5FF4F3C6FA9B7B3F</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ServerLogger_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>\\mydastr01.isr.hp.com\qc\QcLoggers\ServerLogger\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\mydastr01.isr.hp.com\qc\QcLoggers\ServerLogger\</InstallUrl>
+    <ProductName>QC Server Logger</ProductName>
+    <PublisherName>Quality Center Loggers</PublisherName>
+    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\OptionColors.cs" />
+    <Compile Include="Config\Options.cs" />
+    <Compile Include="Config\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\OptionsForm.Designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GotoIdDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GotoIdDialog.Designer.cs">
+      <DependentUpon>GotoIdDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mvc\MessageTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mvc\MessageTextBox.Designer.cs">
+      <DependentUpon>MessageTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mvc\GroupByRequestControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mvc\GroupByRequestControl.Designer.cs">
+      <DependentUpon>GroupByRequestControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mvc\PlainViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mvc\PlainViewControl.Designer.cs">
+      <DependentUpon>PlainViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mvc\Utilities.cs" />
+    <Compile Include="Parser\AbsALMParserWithVersion.cs" />
+    <Compile Include="Parser\AbsParserWithVersion.cs" />
+    <Compile Include="Parser\AbsSAParserWithVersion.cs" />
+    <Compile Include="Parser\Parser1255.cs" />
+    <Compile Include="Parser\Parser1200SA.cs" />
+    <Compile Include="Parser\AbsParser1200.cs" />
+    <Compile Include="Parser\Parser1200.cs" />
+    <Compile Include="Parser\Parser1100Patch10.cs" />
+    <Compile Include="Parser\Core\ISupportType.cs" />
+    <Compile Include="Parser\Parser0920SA_Ex.cs" />
+    <Compile Include="Parser\Parser0920_Ex.cs" />
+    <Compile Include="Parser\Core\Constants.cs" />
+    <Compile Include="Parser\Core\ISupportWarnTypes.cs" />
+    <Compile Include="Parser\Core\LogRequest.cs" />
+    <Compile Include="Parser\Core\LogRequestCollection.cs" />
+    <Compile Include="Parser\Core\LogSubRequest.cs" />
+    <Compile Include="Parser\Core\LogSubRequestCollection.cs" />
+    <Compile Include="Parser\Parser0920SA.cs" />
+    <Compile Include="Parser\Parser1000SA.cs" />
+    <Compile Include="Parser\Parser0900SA.cs" />
+    <Compile Include="Parser\ParsePercentageEventArgs.cs" />
+    <Compile Include="Parser\Parser0900.cs" />
+    <Compile Include="Parser\Parser0920.cs" />
+    <Compile Include="Parser\Parser1000.cs" />
+    <Compile Include="Parser\Parser1100.cs" />
+    <Compile Include="Parser\Parser1100SA.cs" />
+    <Compile Include="Parser\Parser1152ALM.cs" />
+    <Compile Include="Parser\Parser1152SA.cs" />
+    <Compile Include="Parser\ParserBase.cs" />
+    <Compile Include="Parser\ParserFactory.cs" />
+    <Compile Include="Parser\ParserManagerAsync.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Progress\JobBase.cs" />
+    <Compile Include="Progress\JobProgressEventArgs.cs" />
+    <Compile Include="Progress\ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Progress\ProgressForm.Designer.cs">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Config\OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GotoIdDialog.resx">
+      <DependentUpon>GotoIdDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mvc\GroupByRequestControl.resx">
+      <DependentUpon>GroupByRequestControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mvc\PlainViewControl.resx">
+      <DependentUpon>PlainViewControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Progress\ProgressForm.resx">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LogComponents\LogComponents\LogComponents.csproj">
+      <Project>{3ddd058b-d427-4341-a170-836e0badbf10}</Project>
+      <Name>LogComponents</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
