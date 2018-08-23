@@ -12,7 +12,8 @@ namespace ServerLogger.Parser
     {
       listParser = new List<ParserBase>();
 
-	  listParser.Add(new Parser1255());
+      listParser.Add(new Parser1260());
+      listParser.Add(new Parser1255());
 	  listParser.Add(new Parser1200());
       listParser.Add(new Parser1200SA());
       listParser.Add(new Parser1152ALM());

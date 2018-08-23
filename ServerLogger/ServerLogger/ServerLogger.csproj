@@ -123,6 +123,7 @@
     <Compile Include="Parser\AbsALMParserWithVersion.cs" />
     <Compile Include="Parser\AbsParserWithVersion.cs" />
     <Compile Include="Parser\AbsSAParserWithVersion.cs" />
+    <Compile Include="Parser\Parser1260.cs" />
     <Compile Include="Parser\Parser1255.cs" />
     <Compile Include="Parser\Parser1200SA.cs" />
     <Compile Include="Parser\AbsParser1200.cs" />
